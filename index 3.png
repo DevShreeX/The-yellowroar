@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSK Hero Page</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  background: linear-gradient(90deg, #ffcc00, #0046ad);
+  color: white;
+  padding: 20px;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: #ffcc00;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+/* HERO */
+.hero {
+  height: 80vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+  url("https://upload.wikimedia.org/wikipedia/commons/2/2b/M_A_Chidambaram_Stadium.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  color: #ffd700;
+  font-size: 45px;
+}
+
+.hero p {
+  margin-top: 10px;
+}
+
+/* BUTTON */
+.btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #ffd700;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* SECTION */
+.section {
+  padding: 50px;
+  text-align: center;
+  background: #111;
+  color: white;
+}
+
+.section h2 {
+  color: #ffd700;
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #1c1c1c;
+  padding: 15px;
+  border-radius: 10px;
+  width: 220px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card h3 {
+  color: #ffd700;
+  margin-top: 10px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: black;
+  color: #aaa;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>WELCOME TO CSK FRANCHISE</h1>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+
+  <a href="#">vote</a>
+  <a href="vote.html">
+     <button>✅</button> </a>
+
+  <a href="#">Team</a>
+  <a href="team 2021.html"</a>
+     <button>✅</button> </a>
+
+     <a href="#">chat</a>
+  <a href="chat.html">
+     <button>✅</button> </a>
+
+  <a href="#">Shop</a>
+  <a href="shop.html">
+     <button>✅</button> </a>
+     
+  <a href="#">Contact</a>
+  <button>📞</button> </a>
+</nav>
+
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/en/2/2b/Chennai_Super_Kings_Logo.svg" width="120">
+  <h1>CHENNAI SUPER KINGS</h1>
+  <p>Whistle Podu 🟡 | Pride of Chennai | IPL Legends</p>
+<a href="csk  fam login  form.html">
+    <button class="btn">Enter Fan Zone</button>
+</a>
+</div>
+
+<div class="section">
+  <h2>🔥 porkanda singangal 🔥</h2>
+
+  <div class="cards">
+    <div class="card">
+      <img src="thala6.html" ">
+      <h3>Thala</h3>
+    </div>
+
+    <div class="card">
+      <img src="raina.html">
+      <h3>Chinna Thala</h3>
+    </div>
+
+    <div class="card">
+      <img src="sanju2.html">
+      <h4>Chettan</h4>
+    </div>
+
+    <div class="card">
+      <img src="jaddu1.html">
+      <h4>Jaddu</h4>
+    </div>
+
+    <div class="card">
+      <img src="rutuuu.html">
+      <h3>Rocket Raja</h3>
+    </div>
+
+    <div class="card">
+      <img src="deepak.html">
+      <h4>Cherry</h4>
+    </div>
+
+    <div class="card">
+      <img src="shivam.html">
+      <h4>Aaruchami</h4>
+    </div>
+
+    <div class="card">
+      <img src="curran.html">
+      <h4>Kadakutti Singam</h4>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 Chennai Super Kings Fan Page
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<div class="hero-image">
+<html>
+<head>
+  <title>Register</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;  
+      align-items: center;    
+      background: linear-gradient(135deg, #FDB913, #1E3A8A); 
+      font-family:'Poppins', sans-serif;
+    }
+
+    .form-box {
+      background: rgba(255, 255, 255, 0.9); 
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      width: 300px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #1E3A8A; 
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #FDB913;
+      color: #031442;     
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #e0a800;
+    }
+  </style>
+</head>
+
+<body>
+ 
+  <div class="form-box">
+    <h2><i># Welcome to Yellow Family</i></h2>
+    <form>
+      <input type="text" placeholder="Username" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <input type="text" placeholder="Phone Number" required>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+</body>

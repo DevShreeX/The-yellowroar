@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>vote your fav yellow fellows😉 </title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(135deg, #FDB913, #1E3A8A);
+  color: white;
+}
+
+/* Section Title */
+h2 {
+  text-align: center;
+  margin: 30px 0 10px;
+  font-size: 36px;
+  letter-spacing: 2px;
+}
+
+/* Grid Layout */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 20px 40px;
+}
+
+/* Card */
+.card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #FDB913;
+}
+
+
+.card img {
+  width: 100%;
+  height: 350px;
+  object-fit: contain;
+  background: rgb(235, 227, 227);
+}
+
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+}
+
+
+.overlay h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.overlay p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #171177;
+}
+
+
+.overlay button {
+  margin-top: 8px;
+  padding: 8px;
+  width: 100%;
+  border: none;
+  background: #FDB913;
+  color: #1E3A8A;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.overlay button:hover {
+  background: #150445;
+}
+
+
+.footer {
+  text-align: center;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.764);
+  margin-top: 20px;
+}
+
+</style>
+</head>
+
+<body>
+<h2><i>VOTE YOUR FAV YELLOW FELLOW😉</i></h2>
+<p class="disclaimer">
+                   ⚠️Only one vote allowed. Think carefully before voting. Once you vote, you cannot change it.
+</p>
+
+<h2>WICKET KEEPERS</h2>
+
+<div class="container">
+<div class="card"><img src="dhoni4.html"><div class="overlay"><h3>MS Dhoni</h3><p>Wicket Keeper</p><button onclick="vote('MS Dhoni')">Vote</button></div></div>
+<div class="card"><img src="karthik.html"><div class="overlay"><h3>Karthik Sharma</h3><p>Wicket Keeper</p><button onclick="vote('Karthik Sharma')">Vote</button></div></div>
+<div class="card"><img src="sanju.html"><div class="overlay"><h3>Sanju Samson</h3><p>Wicket Keeper</p><button onclick="vote('Sanju Samson')">Vote</button></div></div>
+<div class="card"><img src="urvil.html"><div class="overlay"><h3>Urvil Patel</h3><p>Wicket Keeper</p><button onclick="vote('Urvil Patel')">Vote</button></div></div>
+</div>
+
+<h2>BATTERS</h2>
+<div class="container">
+<div class="card"><img src="ruru.html"><div class="overlay"><h3>Ruturaj Gaikwad</h3><p>Batsman</p><button onclick="vote('Ruturaj Gaikwad')">Vote</button></div></div>
+<div class="card"><img src="sarafaraz.html"><div class="overlay"><h3>Sarfaraz Khan</h3><p>Batsman</p><button onclick="vote('Sarfaraz Khan')">Vote</button></div></div>
+<div class="card"><img src="mathew.html"><div class="overlay"><h3>Matthew Short</h3><p>Batsman</p><button onclick="vote('Matthew Short')">Vote</button></div></div>
+<div class="card"><img src="ayush.html"><div class="overlay"><h3>Ayush Mhatre</h3><p>Batsman</p><button onclick="vote('Ayush Mhatre')">Vote</button></div></div>
+<div class="card"><img src="dewald.html"><div class="overlay"><h3>Dewald Brevis</h3><p>Batsman</p><button onclick="vote('Dewald Brevis')">Vote</button></div></div>
+</div>
+
+<h2>BOWLERS</h2>
+<div class="container">
+<div class="card"><img src="akash.html"><div class="overlay"><h3>Akash Madhwal</h3><p>Bowler</p><button onclick="vote('Akash Madhwal')">Vote</button></div></div>
+<div class="card"><img src="noor.html"><div class="overlay"><h3>Noor Ahmed</h3><p>Bowler</p><button onclick="vote('Noor Ahmed')">Vote</button></div></div>
+<div class="card"><img src="rahul.html"><div class="overlay"><h3>Rahul Chahar</h3><p>Bowler</p><button onclick="vote('Rahul Chahar')">Vote</button></div></div>
+<div class="card"><img src="khaleel.html"><div class="overlay"><h3>Khaleel Ahmed</h3><p>Bowler</p><button onclick="vote('Khaleel Ahmed')">Vote</button></div></div>
+<div class="card"><img src="spencar.html"><div class="overlay"><h3>Spencer Johnson</h3><p>Bowler</p><button onclick="vote('Spencer Johnson')">Vote</button></div></div>
+</div>
+
+<h2>ALL ROUNDERS</h2>
+<div class="container">
+<div class="card"><img src="dube.html"><div class="overlay"><h3>Shivam Dube</h3><p>All-rounder</p><button onclick="vote('Shivam Dube')">Vote</button></div></div>
+<div class="card"><img src="aman.html"><div class="overlay"><h3>Aman Khan</h3><p>All-rounder</p><button onclick="vote('Aman Khan')">Vote</button></div></div>
+<div class="card"><img src="akheil.html"><div class="overlay"><h3>Akheal Hosein</h3><p>All-rounder</p><button onclick="vote('Akheal Hosein')">Vote</button></div></div>
+<div class="card"><img src="ghosh.html"><div class="overlay"><h3>Ramakrishna Ghosh</h3><p>All-rounder</p><button onclick="vote('Ramakrishna Ghosh')">Vote</button></div></div>
+<div class="card"><img src="kamboj.html"><div class="overlay"><h3>Anshul Kamboj</h3><p>All-rounder</p><button onclick="vote('Anshul Kamboj')">Vote</button></div></div>
+</div>
+
+<div class="footer">
+© CSK Voting Page
+</div>
+
+<script>
+function vote(player) {
+  alert("You voted for " + player + " 🏏");
+}
+</script>
+
+</body>
+</html>
