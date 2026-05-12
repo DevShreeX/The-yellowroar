@@ -1,6 +1,16 @@
 import { db } from './firebase-config.js';
 import { collection, addDoc, onSnapshot, query, orderBy, serverTimestamp, doc, getDoc, setDoc, updateDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
+// --- Auth Check ---
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+if (currentPage !== 'login.html') {
+    const hasUsername = localStorage.getItem('csk_username');
+    const hasUuid = localStorage.getItem('csk_user_uuid');
+    if (!hasUsername || !hasUuid) {
+        window.location.href = 'login.html';
+    }
+}
+
 // --- UUID Generation & Local Storage ---
 function getOrCreateUUID() {
     let uuid = localStorage.getItem('csk_user_uuid');
@@ -174,4 +184,119 @@ function loadComments() {
         console.error("Error fetching comments: ", error);
         commentsList.innerHTML = "<p>Error loading comments.</p>";
     });
+}
+
+// ===========================
+// CHAT SYSTEM
+// ===========================
+
+function initChat() {
+    const chatMessages = document.getElementById("chatMessages");
+    const chatInput = document.getElementById("chatInput");
+    const chatSendBtn = document.getElementById("chatSendBtn");
+
+    if (!chatMessages || !chatInput || !chatSendBtn) return; // Not on chat page
+
+    const uuid = getOrCreateUUID();
+    const username = localStorage.getItem("csk_username") || "Anonymous";
+
+    // Send message on button click
+    chatSendBtn.addEventListener("click", () => sendChatMessage(chatInput, username, uuid));
+
+    // Send message on Enter key
+    chatInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            sendChatMessage(chatInput, username, uuid);
+        }
+    });
+
+    // Listen for messages in real-time
+    loadChatMessages(chatMessages, uuid);
+}
+
+async function sendChatMessage(inputEl, username, uuid) {
+    const msg = inputEl.value.trim();
+    if (!msg) return;
+
+    inputEl.value = "";
+
+    try {
+        await addDoc(collection(db, "chats"), {
+            message: msg,
+            username: username,
+            uuid: uuid,
+            createdAt: serverTimestamp()
+        });
+    } catch (e) {
+        console.error("Error sending chat: ", e);
+        alert("Failed to send message. Try again.");
+    }
+}
+
+function loadChatMessages(chatMessages, currentUuid) {
+    const q = query(collection(db, "chats"), orderBy("createdAt", "asc"));
+    let initialLoad = true;
+
+    onSnapshot(q, (snapshot) => {
+        // Clear welcome message on first real messages
+        const welcomeMsg = chatMessages.querySelector(".chat-welcome-msg");
+
+        const uniqueUsers = new Set();
+
+        snapshot.forEach((d) => {
+            const data = d.data();
+            if (data.uuid) uniqueUsers.add(data.uuid);
+
+            // Don't re-render existing messages
+            if (document.getElementById(`msg-${d.id}`)) return;
+
+            // Remove welcome message once real messages arrive
+            if (welcomeMsg) welcomeMsg.remove();
+
+            const isSent = data.uuid === currentUuid;
+            const msgDiv = document.createElement("div");
+            msgDiv.id = `msg-${d.id}`;
+            msgDiv.classList.add("chat-msg", isSent ? "sent" : "received");
+
+            const timeStr = data.createdAt
+                ? data.createdAt.toDate().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                : new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+            const dateStr = data.createdAt
+                ? data.createdAt.toDate().toLocaleDateString()
+                : new Date().toLocaleDateString();
+
+            msgDiv.innerHTML = `
+                <div class="chat-msg-bubble">
+                    <div class="chat-msg-username">${data.username || 'Anonymous'}</div>
+                    <div>${data.message}</div>
+                    <div class="chat-msg-meta">
+                        <span>${dateStr} ${timeStr}</span>
+                    </div>
+                </div>
+            `;
+
+            chatMessages.appendChild(msgDiv);
+        });
+
+        // Update online count
+        const countEl = document.getElementById("chatOnlineCount");
+        if (countEl) {
+            countEl.textContent = `${uniqueUsers.size} fan${uniqueUsers.size !== 1 ? 's' : ''} chatting`;
+        }
+
+        // Auto-scroll to bottom
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        initialLoad = false;
+    }, (error) => {
+        console.error("Error loading chat: ", error);
+    });
+}
+
+// Initialize chat if on chat page
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initChat);
+} else {
+    initChat();
 }

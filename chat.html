@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chat with Leo</title>
+<title>Chat with Leo - CSK Fan Hub</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-
     <link rel="stylesheet" href="css/chat.css">
 </head>
 
@@ -19,60 +17,60 @@
     <section class="left-panel">
 
         <div class="hero-image">
-            <!-- FIXED IMAGE -->
             <img src="assets/images/leo macsot.png" alt="Leo Mascot" class="mascot">
         </div>
 
-        <!-- TEXT PROPERLY ALIGNED -->
         <div class="text-content">
             <h1>Hey makkaley! 💛</h1>
-
             <p>Hello <span>Yellove Army</span>! Your lion is here from the den 🦁</p>
-
             <p>The roar you bring to the stadium... we feel it every match!</p>
-
             <p>Got questions about matches, players, or moments?</p>
-
-            <p><strong>Drop your questions and let’s talk cricket! 🏏 and have some fun with us </strong></p>
-
+            <p><strong>Drop your questions and let's talk cricket! 🏏</strong></p>
             <h3>#WhistlePodu</h3>
         </div>
 
     </section>
 
-    <!-- RIGHT PANEL -->
+    <!-- RIGHT PANEL - CHAT -->
     <section class="right-panel">
 
-        <!-- BUBBLES -->
-        <div class="bubble b1">Thala Aadraara?</div>
-        <div class="bubble b2">Auction?</div>
-        <div class="bubble b3">Chettan Vannaley?!</div>
-        <div class="bubble b4">Naan vilven endru nenaithaiyooo</div>
-        <div class="bubble b5">Cup Mukiyam Leo!</div>
-        <div class="bubble b6">Ippadai thorkin eppadai vellum?</div>
-        <div class="bubble b7">Dei pacha satta!</div>
-        <div class="bubble b8">Suthi nindru oorey!</div>
-
-        <!-- LOGIN CENTER -->
-        <div class="login-box">
-            <h3>Login Required</h3>
-            <p>Login pannunga… pesalaam 😉</p>
-            <a href="leo-login.html">
-                <button>CLICK HERE</button>
-            </a>
+        <!-- Chat Header -->
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <div class="chat-avatar">🦁</div>
+                <div>
+                    <h3>Yellove Fan Chat</h3>
+                    <span class="chat-status" id="chatOnlineCount">Loading...</span>
+                </div>
+            </div>
         </div>
 
-        <h2 class="hotline-title">chat with leo 🐦‍🔥</h2>
+        <!-- Chat Messages Area -->
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages will be injected here by JS -->
+            <div class="chat-welcome-msg">
+                <p>Welcome to the Yellove Fan Chat! 💛</p>
+                <p>Start talking with fellow CSK fans.</p>
+            </div>
+        </div>
+
+        <!-- Chat Input Area -->
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off">
+            <button id="chatSendBtn" title="Send">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor"/></svg>
+            </button>
+        </div>
 
     </section>
 
 </main>
+
 <div class="footer">
   © 2026 Chennai Super Kings Fan Page
 </div>
 
-
 <script type="module" src="js/firebase-config.js"></script>
-<script src="js/main.js"></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>

@@ -1,31 +1,48 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<div class="hero-image">
-<html>
-<head>
-  <title>Register</title>
-  
-    <link rel="stylesheet" href="css/login.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Chennai Super Kings</title>
+  <link rel="stylesheet" href="css/login.css">
 </head>
-
 <body>
- 
   <div class="form-box">
-    <h2><i># Welcome to Yellow Family</i></h2>
-    <form>
-      <input type="text" placeholder="Username" required>
-      <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Password" required>
-      <input type="text" placeholder="Phone Number" required>
-      <button type="submit">Register</button>
+    <div class="logo-container">
+      <img src="assets/images/leo macsot.png" alt="CSK Mascot" width="100" style="margin-bottom: 10px;">
+    </div>
+    <h2><i># Welcome to the Yellow Family 💛</i></h2>
+    <p style="color: #666; font-size: 0.9em; margin-bottom: 20px;">Enter your username to join the roar!</p>
+    <form id="loginForm">
+      <input type="text" id="usernameInput" placeholder="Choose a Username" required minlength="3">
+      <button type="submit">Enter Fan Zone</button>
     </form>
   </div>
 
+  <script type="module">
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('usernameInput').value.trim();
+      if (username) {
+        localStorage.setItem('csk_username', username);
+        
+        let uuid = localStorage.getItem('csk_user_uuid');
+        if (!uuid) {
+          uuid = 'id-' + Math.random().toString(36).substr(2, 9) + '-' + Date.now();
+          localStorage.setItem('csk_user_uuid', uuid);
+        }
+        
+        // Redirect to home page
+        window.location.href = 'home.html';
+      }
+    });
 
-<script type="module" src="js/firebase-config.js"></script>
-<script src="js/main.js"></script>
+    // If already logged in, redirect to home
+    window.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('csk_username') && localStorage.getItem('csk_user_uuid')) {
+        window.location.href = 'home.html';
+      }
+    });
+  </script>
 </body>
+</html>
