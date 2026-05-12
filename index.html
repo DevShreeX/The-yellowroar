@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome to csk fan hub</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: grey;
+        }
+
+        .container {
+            width: 350px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #11a634;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #18c23d;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Welcome to CSK Fan Hub</h2>
+
+    <form>
+
+        <input type="text" placeholder="Full Name" required>
+
+        <input type="email" placeholder="Email Address" required>
+
+        <input type="password" placeholder="Password" required>
+
+        <input type="password" placeholder="Confirm Password" required>
+
+        <label>Gender</label>
+
+        <select required>
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+        <input type="number" placeholder="Enter your age" required>
+
+        <input type="tel" placeholder="Phone Number" required>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <a href="home.html">
+        <button>CLICK HERE</button>
+    </a>
+
+</div>
+
+
+<script type="module" src="js/firebase-config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
+

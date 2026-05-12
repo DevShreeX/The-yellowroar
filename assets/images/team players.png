@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSK 2020 Key Squad</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #FDB913, #1E3A8A);
+      text-align: center;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    table {
+      margin: 30px auto;
+      width: 90%;
+      border-collapse: collapse;
+      background: white;
+      color: black;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th {
+      background: #FDB913;
+      color: #1E3A8A;
+      padding: 12px;
+    }
+
+    td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    tr:nth-child(even) {
+      background: #f3f3f3;
+    }
+
+    h2 {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>🏆 Chennai Super Kings (CSK) Squad 2020</h2>
+
+  <table>
+    <tr>
+      <th>Photo</th>
+      <th>Player</th>
+      <th>Role</th>
+    </tr>
+
+    <tr>
+      <td><img src="dhoni1.html"</td>
+      <td>MS Dhoni</td>
+      <td>Wicket Keeper</td>
+    </tr>
+
+    <tr>
+      <td><img src="rain.html"></td>
+      <td>Suresh Raina</td>
+      <td>Batsman</td>
+    </tr>
+
+    <tr>
+      <td><img src="fahh.html"></td>
+      <td>Faf du Plessis</td>
+      <td>Batsman</td>
+    </tr>
+
+    <tr>
+      <td><img src="watson.html"></td>
+      <td>Shane Watson</td>
+      <td>All-rounder</td>
+    </tr>
+
+    <tr>
+      <td><img src="jadeja.html"></td>
+      <td>Ravindra Jadeja</td>
+      <td>All-rounder</td>
+    </tr>
+
+    <tr>
+      <td><img src="bravo.html"></td>
+      <td>Dwayne Bravo</td>
+      <td>All-rounder / Bowler</td>
+    </tr>
+
+    <tr>
+      <td><img src="rayudu.html"></td>
+      <td>Ambati Rayudu</td>
+      <td>Batsman</td>
+    </tr>
+
+    <tr>
+      <td><img src="chahar.html"></td>
+      <td>Deepak Chahar</td>
+      <td>Bowler</td>
+    </tr>
+
+    <tr>
+      <td><img src="thakur.html"></td>
+      <td>Shardul Thakur</td>
+      <td>Bowler</td>
+    </tr>
+
+    <tr>
+      <td><img src="lungi.html"></td>
+      <td>Lungi Ngidi</td>
+      <td>Bowler</td>
+    </tr>
+
+    <tr>
+      <td><img src="sam.html"></td>
+      <td>Sam Curran</td>
+      <td>All-rounder</td>
+    </tr>
+
+  </table>
+
+</body>
+</html>

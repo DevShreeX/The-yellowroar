@@ -1,0 +1,45 @@
+﻿body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #FDB913, #1E3A8A);
+      text-align: center;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    table {
+      margin: 30px auto;
+      width: 90%;
+      border-collapse: collapse;
+      background: white;
+      color: black;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th {
+      background: #FDB913;
+      color: #1E3A8A;
+      padding: 12px;
+    }
+
+    td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    tr:nth-child(even) {
+      background: #f3f3f3;
+    }
+
+    h2 {
+      margin-top: 20px;
+    }

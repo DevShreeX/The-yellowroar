@@ -1,0 +1,72 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #FDB913, #1E3A8A);
+  text-align: center;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+
+table {
+  margin: 30px auto;
+  width: 95%;
+  border-collapse: collapse;
+  background: white;
+  color: black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th {
+  background: #FDB913;
+  color: #1E3A8A;
+  padding: 12px;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background: #f3f3f3;
+}
+
+
+img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nav {
+  margin: 20px 0;
+}
+
+.status-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #FDB913; /* CSK Yellow */
+  color: #1E3A8A; /* CSK Blue */
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.status-btn:hover {
+  background: #1E3A8A;
+  color: #FDB913;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
