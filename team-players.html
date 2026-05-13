@@ -12,6 +12,18 @@
 <body>
 
   <h2>🏆 Chennai Super Kings (CSK) Squad 2020</h2>
+<div class="nav">
+    <a href="status.html" class="status-btn">Status</a>
+</div>
+
+<div class="team-nav">
+    <button class="filter-btn active" onclick="filterTeam('all')">ALL</button>
+    <button class="filter-btn" onclick="filterTeam('batsman')">BATSMEN</button>
+    <button class="filter-btn" onclick="filterTeam('all-rounder')">ALL ROUNDERS</button>
+    <button class="filter-btn" onclick="filterTeam('wicket')">WICKET KEEPERS</button>
+    <button class="filter-btn" onclick="filterTeam('bowler')">BOWLERS</button>
+</div>
+
 
   <table>
     <tr>
@@ -89,6 +101,29 @@
   </table>
 
 
+
+
+<script>
+function filterTeam(role) {
+    // Update active button
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    // Filter table rows
+    const rows = document.querySelectorAll('table tr');
+    for (let i = 1; i < rows.length; i++) {
+        const roleCell = rows[i].querySelector('td:nth-child(3)');
+        if (roleCell) {
+            const cellText = roleCell.textContent.toLowerCase();
+            if (role === 'all' || cellText.includes(role)) {
+                rows[i].style.display = '';
+            } else {
+                rows[i].style.display = 'none';
+            }
+        }
+    }
+}
+</script>
 <script type="module" src="js/firebase-config.js"></script>
 <script src="js/main.js"></script>
 </body>

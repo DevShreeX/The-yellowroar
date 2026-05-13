@@ -1,103 +1,213 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>welcome to csk fan hub</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: grey;
-        }
-
-        .container {
-            width: 350px;
-            margin: 50px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            text-align: center;
-        }
-
-        input,
-        select,
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        textarea {
-            resize: none;
-            height: 100px;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            background: #11a634;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        button:hover {
-            background: #18c23d;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSK Fan Hub - Chennai Super Kings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/home.css">
+  <style>
+    /* LOGIN OVERLAY */
+    .login-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, rgba(30,58,138,0.95), rgba(253,185,19,0.9));
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(8px);
+      animation: overlayFadeIn 0.4s ease;
+    }
+    @keyframes overlayFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .login-overlay.hidden {
+      display: none;
+    }
+    .login-card {
+      background: rgba(255,255,255,0.95);
+      padding: 40px 35px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      width: 380px;
+      max-width: 90vw;
+      text-align: center;
+      animation: cardSlideUp 0.5s ease;
+    }
+    @keyframes cardSlideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .login-card img {
+      width: 100px;
+      margin-bottom: 15px;
+    }
+    .login-card h2 {
+      color: #1E3A8A;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+    .login-card .login-subtitle {
+      color: #666;
+      font-size: 0.9em;
+      margin-bottom: 25px;
+    }
+    .login-card input {
+      width: 100%;
+      padding: 14px 18px;
+      margin: 8px 0;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      outline: none;
+      transition: border-color 0.3s;
+      box-sizing: border-box;
+    }
+    .login-card input:focus {
+      border-color: #FDB913;
+    }
+    .login-card button {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #FDB913, #e0a800);
+      color: #1E3A8A;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.05rem;
+      font-family: 'Poppins', sans-serif;
+      margin-top: 15px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(253,185,19,0.3);
+    }
+    .login-card button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(253,185,19,0.5);
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <!-- LOGIN OVERLAY (shown only if not logged in) -->
+  <div class="login-overlay" id="loginOverlay">
+    <div class="login-card">
+      <img src="assets/images/leo macsot.png" alt="CSK Mascot">
+      <h2>Welcome to the Yellow Family 💛</h2>
+      <p class="login-subtitle">Enter your username to join the roar!</p>
+      <form id="loginForm">
+        <input type="text" id="usernameInput" placeholder="Choose a Username" required minlength="3" autocomplete="off">
+        <button type="submit">Enter Fan Zone 🦁</button>
+      </form>
+    </div>
+  </div>
 
-    <h2>Welcome to CSK Fan Hub</h2>
+  <!-- HOME PAGE CONTENT -->
+  <header>
+    <h1>WELCOME TO CSK FRANCHISE</h1>
+  </header>
 
-    <form>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="vote.html">Vote</a>
+    <a href="team-2021.html">Team</a>
+    <a href="chat.html">Chat</a>
+    <a href="shop.html">Shop</a>
+  </nav>
 
-        <input type="text" placeholder="Full Name" required>
+  <div class="hero">
+    <img src="https://upload.wikimedia.org/wikipedia/en/2/2b/Chennai_Super_Kings_Logo.svg" width="120">
+    <h1>CHENNAI SUPER KINGS</h1>
+    <p>Whistle Podu 🟡 | Pride of Chennai | IPL Legends</p>
+  </div>
 
-        <input type="email" placeholder="Email Address" required>
+  <div class="section">
+    <h2>🔥 porkanda singangal 🔥</h2>
 
-        <input type="password" placeholder="Password" required>
+    <div class="cards">
+      <div class="card">
+        <img src="assets/images/thala6.png" alt="Thala">
+        <h3>Thala</h3>
+      </div>
 
-        <input type="password" placeholder="Confirm Password" required>
+      <div class="card">
+        <img src="assets/images/raina.png" alt="Chinna Thala">
+        <h3>Chinna Thala</h3>
+      </div>
 
-        <label>Gender</label>
+      <div class="card">
+        <img src="assets/images/sanju2.png" alt="Chettan">
+        <h4>Chettan</h4>
+      </div>
 
-        <select required>
-            <option value="">Select Gender</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select>
+      <div class="card">
+        <img src="assets/images/jaddu1.png" alt="Jaddu">
+        <h4>Jaddu</h4>
+      </div>
 
-        <input type="number" placeholder="Enter your age" required>
+      <div class="card">
+        <img src="assets/images/rutuuu.png" alt="Rocket Raja">
+        <h3>Rocket Raja</h3>
+      </div>
 
-        <input type="tel" placeholder="Phone Number" required>
+      <div class="card">
+        <img src="assets/images/deepak.png" alt="Cherry">
+        <h4>Cherry</h4>
+      </div>
 
-        <button type="submit">Submit</button>
+      <div class="card">
+        <img src="assets/images/shivam.png" alt="Aaruchami">
+        <h4>Aaruchami</h4>
+      </div>
 
-    </form>
+      <div class="card">
+        <img src="assets/images/curran.png" alt="Kadakutti Singam">
+        <h4>Kadakutti Singam</h4>
+      </div>
+    </div>
+  </div>
 
-    <a href="home.html">
-        <button>CLICK HERE</button>
-    </a>
+  <footer>
+    © 2026 Chennai Super Kings Fan Page
+  </footer>
 
-</div>
+  <script type="module">
+    // --- Login logic (runs before main.js) ---
+    const overlay = document.getElementById('loginOverlay');
+    const hasUsername = localStorage.getItem('csk_username');
+    const hasUuid = localStorage.getItem('csk_user_uuid');
 
+    if (hasUsername && hasUuid) {
+      // Already logged in - hide overlay immediately
+      overlay.classList.add('hidden');
+    }
 
-<script type="module" src="js/firebase-config.js"></script>
-<script src="js/main.js"></script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('usernameInput').value.trim();
+      if (username) {
+        localStorage.setItem('csk_username', username);
+
+        let uuid = localStorage.getItem('csk_user_uuid');
+        if (!uuid) {
+          uuid = 'id-' + Math.random().toString(36).substr(2, 9) + '-' + Date.now();
+          localStorage.setItem('csk_user_uuid', uuid);
+        }
+
+        // Hide overlay with animation
+        overlay.style.animation = 'overlayFadeIn 0.3s ease reverse';
+        setTimeout(() => {
+          overlay.classList.add('hidden');
+        }, 280);
+      }
+    });
+  </script>
+  <script type="module" src="js/firebase-config.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
-

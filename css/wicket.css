@@ -11,7 +11,6 @@ h2 {
   margin-top: 20px;
 }
 
-
 table {
   margin: 30px auto;
   width: 95%;
@@ -37,7 +36,6 @@ td {
 tr:nth-child(even) {
   background: #f3f3f3;
 }
-
 
 img {
   width: 60px;
@@ -69,31 +67,4 @@ img {
   color: #FDB913;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-.team-nav {
-  margin: 20px auto;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.filter-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background: white;
-  color: #1E3A8A;
-  border: 2px solid #1E3A8A;
-  border-radius: 20px;
-  text-decoration: none;
-  font-weight: bold;
-  text-transform: uppercase;
-  transition: all 0.3s;
-  cursor: pointer;
-}
-
-.filter-btn.active, .filter-btn:hover {
-  background: #1E3A8A;
-  color: #FDB913;
 }

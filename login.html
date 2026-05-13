@@ -33,14 +33,14 @@
         }
         
         // Redirect to home page
-        window.location.href = 'home.html';
+        window.location.href = 'index.html';
       }
     });
 
     // If already logged in, redirect to home
     window.addEventListener('DOMContentLoaded', () => {
       if (localStorage.getItem('csk_username') && localStorage.getItem('csk_user_uuid')) {
-        window.location.href = 'home.html';
+        window.location.href = 'index.html';
       }
     });
   </script>

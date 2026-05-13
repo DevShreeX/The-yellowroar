@@ -1,4 +1,4 @@
-﻿body {
+body {
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #FDB913, #1E3A8A);
       text-align: center;
@@ -42,4 +42,31 @@
 
     h2 {
       margin-top: 20px;
+    }
+
+    .team-nav {
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .filter-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: white;
+      color: #1E3A8A;
+      border: 2px solid #1E3A8A;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: #1E3A8A;
+      color: #FDB913;
     }

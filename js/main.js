@@ -3,13 +3,15 @@ import { collection, addDoc, onSnapshot, query, orderBy, serverTimestamp, doc, g
 
 // --- Auth Check ---
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-if (currentPage !== 'login.html') {
+const skipAuthPages = ['login.html', 'index.html', ''];
+if (!skipAuthPages.includes(currentPage)) {
     const hasUsername = localStorage.getItem('csk_username');
     const hasUuid = localStorage.getItem('csk_user_uuid');
     if (!hasUsername || !hasUuid) {
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
     }
 }
+
 
 // --- UUID Generation & Local Storage ---
 function getOrCreateUUID() {
