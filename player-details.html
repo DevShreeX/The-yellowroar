@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player Details | CSK Fan Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/player-details.css">
+</head>
+<body>
+
+  <div class="container" id="player-container">
+    <div class="player-img-container">
+      <img id="player-img" src="assets/images/dhoni1.png" alt="Player Photo">
+    </div>
+    
+    <h1 id="player-name">Loading...</h1>
+    <div class="role-badge" id="player-role">Role</div>
+
+    <div class="details-grid">
+      <div class="detail-item">
+        <div class="detail-label">Batting Style</div>
+        <div class="detail-value" id="player-batting">Loading...</div>
+      </div>
+      
+      <div class="detail-item">
+        <div class="detail-label">Date of Birth</div>
+        <div class="detail-value" id="player-dob">Loading...</div>
+      </div>
+      
+      <div class="detail-item">
+        <div class="detail-label">Origin</div>
+        <div class="detail-value" id="player-origin">Loading...</div>
+      </div>
+    </div>
+
+    <a href="javascript:history.back()" class="back-btn">Back to Squad</a>
+  </div>
+
+  <script src="js/player-details.js"></script>
+</body>
+</html>
