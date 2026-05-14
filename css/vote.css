@@ -1,4 +1,4 @@
-﻿body {
+body {
   margin: 0;
   font-family: Arial;
   background: linear-gradient(135deg, #FDB913, #1E3A8A);
@@ -80,6 +80,25 @@ h2 {
   background: #150445;
   color: white;
 }
+
+.details-btn {
+  margin-top: 8px;
+  padding: 8px;
+  width: 100%;
+  border: 2px solid #FDB913 !important;
+  background: transparent !important;
+  color: #FDB913 !important;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.details-btn:hover {
+  background: #FDB913 !important;
+  color: #1E3A8A !important;
+}
+
 
 /* Comment Section */
 .comment-section {

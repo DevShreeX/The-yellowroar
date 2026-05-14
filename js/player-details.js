@@ -103,6 +103,90 @@ const playerData = {
         dob: "October 17, 1998",
         origin: "Ahmedabad, Gujarat, India",
         img: "assets/images/urvil.png"
+    },
+    "Sarfaraz Khan": {
+        role: "Batsman",
+        batting: "Right hand batsman",
+        dob: "October 22, 1997",
+        origin: "Mumbai, Maharashtra, India",
+        img: "assets/images/sarafaraz.png"
+    },
+    "Matthew Short": {
+        role: "Batsman",
+        batting: "Right hand batsman",
+        dob: "November 8, 1995",
+        origin: "Ballarat, Victoria, Australia",
+        img: "assets/images/mathew.png"
+    },
+    "Ayush Mhatre": {
+        role: "Batsman",
+        batting: "Right hand batsman",
+        dob: "July 16, 2007",
+        origin: "Mumbai, Maharashtra, India",
+        img: "assets/images/ayush.png.png"
+    },
+    "Akash Madhwal": {
+        role: "Bowler",
+        batting: "Right hand batsman",
+        dob: "November 25, 1993",
+        origin: "Roorkee, Uttarakhand, India",
+        img: "assets/images/akash - Copy.png"
+    },
+    "Noor Ahmed": {
+        role: "Bowler",
+        batting: "Right hand batsman",
+        dob: "January 3, 2005",
+        origin: "Khost Province, Afghanistan",
+        img: "assets/images/noor.png"
+    },
+    "Rahul Chahar": {
+        role: "Bowler",
+        batting: "Right hand batsman",
+        dob: "August 4, 1999",
+        origin: "Bharatpur, Rajasthan, India",
+        img: "assets/images/rahul.png"
+    },
+    "Khaleel Ahmed": {
+        role: "Bowler",
+        batting: "Right hand batsman",
+        dob: "December 5, 1997",
+        origin: "Tonk, Rajasthan, India",
+        img: "assets/images/khaleel.png"
+    },
+    "Spencer Johnson": {
+        role: "Bowler",
+        batting: "Left hand batsman",
+        dob: "December 16, 1995",
+        origin: "Adelaide, South Australia",
+        img: "assets/images/spencar.png"
+    },
+    "Aman Khan": {
+        role: "All-rounder",
+        batting: "Right hand batsman",
+        dob: "November 23, 1996",
+        origin: "Mumbai, Maharashtra, India",
+        img: "assets/images/aman.png.png"
+    },
+    "Akheal Hosein": {
+        role: "All-rounder",
+        batting: "Left hand batsman",
+        dob: "April 25, 1993",
+        origin: "Port-of-Spain, Trinidad",
+        img: "assets/images/akhil.png"
+    },
+    "Ramakrishna Ghosh": {
+        role: "All-rounder",
+        batting: "Right hand batsman",
+        dob: "August 28, 1997",
+        origin: "Nashik, Maharashtra, India",
+        img: "assets/images/ghosh.png"
+    },
+    "Anshul Kamboj": {
+        role: "All-rounder",
+        batting: "Right hand batsman",
+        dob: "December 6, 2000",
+        origin: "Karnal, Haryana, India",
+        img: "assets/images/kamboj.png"
     }
 };
 
