@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Database - Chennai Super Kings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/home.css">
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: 'Poppins', sans-serif;
+    }
+    .db-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .db-header {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #1E3A8A;
+    }
+    .db-section {
+      margin-bottom: 40px;
+    }
+    .db-section h3 {
+      color: #FDB913;
+      border-bottom: 2px solid #FDB913;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #1E3A8A;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    .loading-msg {
+      text-align: center;
+      color: #888;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>DATABASE DASHBOARD</h1>
+  </header>
+
+  <nav style="display: flex; align-items: center; justify-content: center; gap: 15px;">
+    <a href="index.html">Home</a>
+    <a href="vote.html">Vote</a>
+    <a href="database.html">Database</a>
+  </nav>
+
+  <div class="db-container">
+    <div class="db-header">
+      <h2>Live Database Viewer</h2>
+      <p>View all past votes and fan comments retrieved directly from Firebase.</p>
+    </div>
+
+    <!-- Votes Section -->
+    <div class="db-section">
+      <h3>🏆 Player Votes</h3>
+      <div id="votesLoading" class="loading-msg">Fetching votes...</div>
+      <table id="votesTable" style="display: none;">
+        <thead>
+          <tr>
+            <th>Player Name</th>
+            <th>Total Votes</th>
+            <th>Voter UUIDs</th>
+          </tr>
+        </thead>
+        <tbody id="votesBody"></tbody>
+      </table>
+    </div>
+
+    <!-- Comments Section -->
+    <div class="db-section">
+      <h3>💬 Past Fan Comments</h3>
+      <div id="commentsLoading" class="loading-msg">Fetching comments...</div>
+      <table id="commentsTable" style="display: none;">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Comment</th>
+            <th>Date & Time</th>
+          </tr>
+        </thead>
+        <tbody id="commentsBody"></tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 Chennai Super Kings Fan Page
+  </footer>
+
+  <script type="module">
+    import { db } from './js/firebase-config.js';
+    import { collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    async function fetchDatabase() {
+      try {
+        // Fetch Votes
+        const votesSnapshot = await getDocs(collection(db, "votes"));
+        const votesBody = document.getElementById("votesBody");
+        
+        if (votesSnapshot.empty) {
+          document.getElementById("votesLoading").innerText = "No votes found in database.";
+        } else {
+          votesSnapshot.forEach((doc) => {
+            const data = doc.data();
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+              <td style="font-weight: bold; color: #1E3A8A;">${doc.id}</td>
+              <td style="color: #28a745; font-weight: bold;">${data.voters ? data.voters.length : 0}</td>
+              <td style="font-size: 0.8em; color: #666; max-width: 300px; word-wrap: break-word;">${data.voters ? data.voters.join(", ") : "None"}</td>
+            `;
+            votesBody.appendChild(tr);
+          });
+          document.getElementById("votesLoading").style.display = "none";
+          document.getElementById("votesTable").style.display = "table";
+        }
+
+        // Fetch Comments
+        const q = query(collection(db, "comments"), orderBy("createdAt", "desc"));
+        const commentsSnapshot = await getDocs(q);
+        const commentsBody = document.getElementById("commentsBody");
+        
+        if (commentsSnapshot.empty) {
+          document.getElementById("commentsLoading").innerText = "No comments found in database.";
+        } else {
+          commentsSnapshot.forEach((doc) => {
+            const data = doc.data();
+            const tr = document.createElement("tr");
+            const dateStr = data.createdAt ? data.createdAt.toDate().toLocaleString() : "Unknown Time";
+            tr.innerHTML = `
+              <td style="font-weight: bold;">${data.username}</td>
+              <td>${data.text}</td>
+              <td style="font-size: 0.9em; color: #666;">${dateStr}</td>
+            `;
+            commentsBody.appendChild(tr);
+          });
+          document.getElementById("commentsLoading").style.display = "none";
+          document.getElementById("commentsTable").style.display = "table";
+        }
+
+      } catch (e) {
+        console.error("Error fetching database:", e);
+        document.getElementById("votesLoading").innerText = "Error loading data.";
+        document.getElementById("commentsLoading").innerText = "Error loading data.";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", fetchDatabase);
+  </script>
+</body>
+</html>
