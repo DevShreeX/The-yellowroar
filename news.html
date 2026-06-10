@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSK News - Chennai Super Kings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/home.css">
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: 'Poppins', sans-serif;
+    }
+    .news-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .news-header {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #1E3A8A;
+    }
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .news-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    .news-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .news-content {
+      padding: 20px;
+    }
+    .news-date {
+      color: #888;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .news-title {
+      font-size: 1.25rem;
+      color: #1E3A8A;
+      margin-bottom: 15px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .news-description {
+      color: #555;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .read-more {
+      display: inline-block;
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #FDB913, #e0a800);
+      color: #1E3A8A;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .read-more:hover {
+      background: linear-gradient(135deg, #e0a800, #FDB913);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>CSK OFFICIAL NEWS</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="vote.html">Vote</a>
+    <a href="team-2021.html">Team</a>
+    <a href="chat.html">Chat</a>
+    <a href="shop.html">Shop</a>
+    <a href="support.html">Support Staff</a>
+    <a href="news.html">News</a>
+  </nav>
+
+  <div class="news-container">
+    <div class="news-header">
+      <h2>Latest Updates & News</h2>
+      <p>Stay updated with the latest happenings in the Yellow Family.</p>
+    </div>
+
+    <div class="news-grid">
+      <!-- News Item 1 -->
+      <div class="news-card">
+        <img src="assets/images/sanju.png" alt="Sanju Samson Joins CSK" class="news-image">
+        <div class="news-content">
+          <span class="news-date">Latest Update</span>
+          <h3 class="news-title">Sanju Samson Joins Chennai Super Kings in Blockbuster Trade</h3>
+          <p class="news-description">In a major squad update, Chennai Super Kings have successfully traded for star wicketkeeper-batter Sanju Samson ahead of the upcoming IPL season, bolstering the top order.</p>
+          <a href="news-sanju.html" class="read-more">Read Full Story</a>
+        </div>
+      </div>
+
+      <!-- News Item 2 -->
+      <div class="news-card">
+        <img src="assets/images/rutu.png" alt="Ruturaj Gaikwad" class="news-image">
+        <div class="news-content">
+          <span class="news-date">Squad News</span>
+          <h3 class="news-title">Captain Ruturaj Gaikwad Leads The Preparations</h3>
+          <p class="news-description">Captain Ruturaj Gaikwad is setting the tone for the season, leading from the front in the preparatory camps as the squad gears up for another thrilling campaign.</p>
+          <a href="news-rutu.html" class="read-more">Read Full Story</a>
+        </div>
+      </div>
+
+      <!-- News Item 3 -->
+      <div class="news-card">
+        <img src="assets/images/dhoni.png" alt="MS Dhoni" class="news-image">
+        <div class="news-content">
+          <span class="news-date">CSK TV</span>
+          <h3 class="news-title">Exclusive MS Dhoni Content on CSK TV</h3>
+          <p class="news-description">Catch the latest behind-the-scenes action and exclusive features showcasing MS Dhoni. Dive into 'Care for Kings' and never-before-seen moments on CSK TV.</p>
+          <a href="news-dhoni.html" class="read-more">Read Full Story</a>
+        </div>
+      </div>
+
+      <!-- News Item 4 -->
+      <div class="news-card">
+        <img src="assets/images/shivam.png" alt="Shivam Dube" class="news-image">
+        <div class="news-content">
+          <span class="news-date">Player Update</span>
+          <h3 class="news-title">Shivam Dube Ready to Bring the Heat</h3>
+          <p class="news-description">Power-hitter Shivam Dube has been honing his skills and is fully prepared to provide the crucial middle-order acceleration the team needs this season.</p>
+          <a href="news-shivam.html" class="read-more">Read Full Story</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Chennai Super Kings Fan Page
+  </footer>
+
+</body>
+</html>
